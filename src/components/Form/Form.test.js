@@ -3,8 +3,7 @@ import { render } from "@testing-library/react";
 import Form from "./Form";
 
 const props = {
-  title: "Test title",
-  label: "Test label"
+  title: "Test title"
 };
 
 describe("Form", () => {
@@ -15,6 +14,5 @@ describe("Form", () => {
   it("should render with title provided by prop", () => {
     const { queryByText } = render(<Form {...props} />);
     expect(queryByText("Test title")).not.toBeNull();
-    // expect(queryByText("Test label")).not.toBeNull();
   });
 });

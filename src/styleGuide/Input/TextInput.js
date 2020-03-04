@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { string, func, number, oneOfType } from "prop-types";
 
 const Wrapper = styled.div``;
 
@@ -7,14 +8,14 @@ const Label = styled.label``;
 
 const StyledInput = styled.input``;
 
-export default function Input({
+export default function TextInput({
   label,
   id,
   type,
   value,
   name,
   className,
-  onChange,
+  handleOnChange,
   ...props
 }) {
   return (
@@ -23,7 +24,7 @@ export default function Input({
       <StyledInput
         id={id}
         type={type}
-        onChange={onChange}
+        onChange={handleOnChange}
         value={value}
         name={name}
         {...props}
@@ -31,3 +32,18 @@ export default function Input({
     </Wrapper>
   );
 }
+
+TextInput.defaultProps = {
+  type: "number",
+  value: ""
+};
+
+TextInput.propTypes = {
+  className: string,
+  handleOnChange: func.isRequired,
+  type: string,
+  value: oneOfType([string, number]),
+  id: string,
+  label: string,
+  name: string.isRequired
+};
