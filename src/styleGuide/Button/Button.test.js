@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import Button from "./Button";
 
 const props = {
-  text: "Convert"
+  label: "Convert"
 };
 
 describe("Button", () => {

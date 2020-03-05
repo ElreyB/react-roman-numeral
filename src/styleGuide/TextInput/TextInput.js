@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { string, func, number, oneOfType } from "prop-types";
 
 const Wrapper = styled.div``;
