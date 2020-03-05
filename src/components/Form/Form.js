@@ -7,17 +7,19 @@ const converterType = {
   roman: {
     title: "Roman Numeral Converter",
     label: "Arabic Number",
-    name: "roman"
+    name: "roman",
+    type: "number"
   },
   arabic: {
     title: "Arabic Number Converter",
     label: "Roman Number",
-    name: "arabic"
+    name: "arabic",
+    type: "text"
   }
 };
 
 export default function Form({ converter, ...props }) {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState({});
   const [state, setState] = useState({});
   const { title, ...rest } = converterType[converter];
 
@@ -27,17 +29,50 @@ export default function Form({ converter, ...props }) {
     setState(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const type = converterType[converter].name;
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (converter === "roman") {
+      setResult(prevResult => ({
+        ...prevResult,
+        roman: romanNumeralsConverter(state.roman)
+      }));
+    } else {
+      setResult(prevResult => ({
+        ...prevResult,
+        arabic: arabicNumberConverter(state.arabic.toUpperCase())
+      }));
+    }
+  };
 
+  const type = converterType[converter].name;
+  console.log(result);
   return (
-    <form>
-      <h1>{title}</h1>
-      <TextInput
-        {...rest}
-        value={state[type]}
-        handleOnChange={handleOnChange}
-      />
-      <Button />
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <h1>{title}</h1>
+        <TextInput
+          {...rest}
+          value={state[type]}
+          handleOnChange={handleOnChange}
+        />
+        <Button label="Convert" onClick={handleSubmit} />
+      </form>
+      <section>
+        {result[converter] && (
+          <>
+            <p>{result[converter]}</p>
+            <Button
+              label="Clear"
+              onClick={() =>
+                setResult(prevResult => ({
+                  ...prevResult,
+                  [converter]: null
+                }))
+              }
+            />
+          </>
+        )}
+      </section>
+    </>
   );
 }

@@ -20,7 +20,7 @@ export default function TextInput({
 }) {
   return (
     <Wrapper className={className}>
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>:
       <StyledInput
         id={id}
         type={type}
