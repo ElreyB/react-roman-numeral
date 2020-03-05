@@ -45,7 +45,6 @@ export default function Form({ converter, ...props }) {
   };
 
   const type = converterType[converter].name;
-  console.log(result);
   return (
     <>
       <form onSubmit={handleSubmit}>
