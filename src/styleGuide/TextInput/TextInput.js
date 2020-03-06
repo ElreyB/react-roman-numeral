@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   display: block;
   font-size: 20px;
+  margin-bottom: 5px;
 `;
 
 const StyledInput = styled.input`
@@ -17,6 +18,7 @@ const StyledInput = styled.input`
   font-size: 20px;
   padding: 5px 0;
   width: 100%;
+  margin-bottom: 10px;
 `;
 
 export default function TextInput({
