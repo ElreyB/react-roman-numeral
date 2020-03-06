@@ -19,11 +19,19 @@ const Panel = styled.div`
   font-weight: bold;
 `;
 
+const Line = styled.div`
+  background-color: #333333;
+  width: 443px;
+  height: 3px;
+  margin-top: 20px;
+`;
+
 function App() {
   return (
     <Main>
       <Panel>
         <Form converter="roman" />
+        <Line />
         <Form converter="arabic" />
       </Panel>
     </Main>
