@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import panelBackground from "./styles/images/panel_background.png";
 
 const Main = styled.main`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.panel};
   min-height: 246px;
   width: 475px;
   position: absolute;

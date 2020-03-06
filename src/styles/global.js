@@ -2,9 +2,8 @@ import { createGlobalStyle } from "styled-components";
 import image from "./images/roman-background.jpeg";
 
 export const GlobalStyles = createGlobalStyle`
-  html {
-  }
   body {
+    color: ${({ theme }) => theme.colors.white};
     padding: 0;
     background-image: url(${image});
     background-size: cover;

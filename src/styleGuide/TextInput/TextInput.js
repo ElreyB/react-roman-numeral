@@ -7,6 +7,7 @@ const Wrapper = styled.div``;
 const Label = styled.label`
   width: 100%;
   display: inline-block;
+  font-size: 20px;
 `;
 
 const StyledInput = styled.input`
