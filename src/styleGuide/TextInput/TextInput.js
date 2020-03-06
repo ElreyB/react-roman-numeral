@@ -9,7 +9,12 @@ const Label = styled.label`
   display: inline-block;
 `;
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input`
+  border: 2px solid grey;
+  text-align: center;
+  font-size: 20px;
+  padding: 5px 0;
+`;
 
 export default function TextInput({
   label,

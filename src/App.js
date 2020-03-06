@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Form from "./components/Form";
 import panelBackground from "./styles/images/panel_background.png";
 
@@ -17,13 +17,14 @@ const Panel = styled.div`
   background-image: url(${panelBackground});
   padding: 15px;
   font-weight: bold;
+  min-height: 246px;
 `;
 
 const Line = styled.div`
   background-color: #333333;
   width: 443px;
   height: 3px;
-  margin-top: 20px;
+  margin: 20px 0;
 `;
 
 function App() {

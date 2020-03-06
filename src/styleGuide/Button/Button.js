@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components/macro";
 import { string, func } from "prop-types";
 
-const StyledButton = styled.button.attrs(({ type }) => ({ type: type }))``;
+const StyledButton = styled.button.attrs(({ type }) => ({ type: type }))`
+  width: 100%;
+  border: 2px solid grey;
+`;
 
 export default function Button({ label, onClick, type, className }) {
   return (

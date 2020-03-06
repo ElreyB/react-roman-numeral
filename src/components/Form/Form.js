@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import Button from "../../styleGuide/Button";
 import TextInput from "../../styleGuide/TextInput";
 import {
@@ -19,6 +19,7 @@ const FormWrapper = styled.div`
 
 const FormSection = styled.section`
   flex-basis: 50%;
+  padding: 0 12px;
 `;
 
 const Result = styled.div`
