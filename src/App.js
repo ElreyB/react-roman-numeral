@@ -7,6 +7,10 @@ const Main = styled.main`
   background-color: white;
   min-height: 246px;
   width: 475px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Panel = styled.div`

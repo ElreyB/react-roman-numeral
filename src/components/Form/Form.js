@@ -21,6 +21,10 @@ const FormSection = styled.section`
   flex-basis: 50%;
 `;
 
+const Result = styled.div`
+  padding-top: 20px;
+`;
+
 export default function Form({ converter, ...props }) {
   const [result, setResult] = useState({});
   const [state, setState] = useState({});
@@ -65,7 +69,7 @@ export default function Form({ converter, ...props }) {
         </FormSection>
         <FormSection>
           {" "}
-          <section>
+          <Result>
             {result[converter] && (
               <>
                 <p>{result[converter]}</p>
@@ -80,7 +84,7 @@ export default function Form({ converter, ...props }) {
                 />
               </>
             )}
-          </section>
+          </Result>
         </FormSection>
       </FormWrapper>
     </Section>
