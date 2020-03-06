@@ -4,7 +4,10 @@ import { string, func, number, oneOfType } from "prop-types";
 
 const Wrapper = styled.div``;
 
-const Label = styled.label``;
+const Label = styled.label`
+  width: 100%;
+  display: inline-block;
+`;
 
 const StyledInput = styled.input``;
 
@@ -20,7 +23,7 @@ export default function TextInput({
 }) {
   return (
     <Wrapper className={className}>
-      <Label htmlFor={id}>{label}</Label>:
+      <Label htmlFor={id}>{label}</Label>
       <StyledInput
         id={id}
         type={type}

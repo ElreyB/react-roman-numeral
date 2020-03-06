@@ -19,6 +19,21 @@ const sortedRomanNumerals = [...romanNumerals].sort(
   (a, b) => b.length - a.length
 );
 
+export const converterType = {
+  roman: {
+    title: "Roman Numeral Converter",
+    label: "Arabic Number",
+    name: "roman",
+    type: "number"
+  },
+  arabic: {
+    title: "Arabic Number Converter",
+    label: "Roman Number",
+    name: "arabic",
+    type: "text"
+  }
+};
+
 export function romanNumeralsConverter(arabicNumber) {
   return romanNumerals.reduce((result, romanNumeral) => {
     while (arabicNumber >= romanNumeralsTable[romanNumeral]) {

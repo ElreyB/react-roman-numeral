@@ -3,16 +3,18 @@ import image from "./images/roman-background.jpeg";
 
 export const GlobalStyles = createGlobalStyle`
   html {
-    /* background-color: ${({ theme }) => theme.colors.black}; */
   }
   body {
-    margin: 0;
     padding: 0;
-    /* color: ${({ theme }) => theme.colors.white}; */
     background-image: url(${image});
     background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
-  h1 {
-    font-size: 30px;
+  body, p {
+    margin: 0;
   }
 `;

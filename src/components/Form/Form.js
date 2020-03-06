@@ -1,22 +1,25 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import Button from "../../styleGuide/Button";
 import TextInput from "../../styleGuide/TextInput";
-import { romanNumeralsConverter, arabicNumberConverter } from "./utils";
+import {
+  romanNumeralsConverter,
+  arabicNumberConverter,
+  converterType
+} from "./utils";
 
-const converterType = {
-  roman: {
-    title: "Roman Numeral Converter",
-    label: "Arabic Number",
-    name: "roman",
-    type: "number"
-  },
-  arabic: {
-    title: "Arabic Number Converter",
-    label: "Roman Number",
-    name: "arabic",
-    type: "text"
-  }
-};
+const Section = styled.section`
+  text-align: center;
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const FormSection = styled.section`
+  flex-basis: 50%;
+`;
 
 export default function Form({ converter, ...props }) {
   const [result, setResult] = useState({});
@@ -46,32 +49,40 @@ export default function Form({ converter, ...props }) {
 
   const type = converterType[converter].name;
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h1>{title}</h1>
-        <TextInput
-          {...rest}
-          value={state[type]}
-          handleOnChange={handleOnChange}
-        />
-        <Button label="Convert" onClick={handleSubmit} />
-      </form>
-      <section>
-        {result[converter] && (
-          <>
-            <p>{result[converter]}</p>
-            <Button
-              label="Clear"
-              onClick={() =>
-                setResult(prevResult => ({
-                  ...prevResult,
-                  [converter]: null
-                }))
-              }
+    <Section>
+      <h1>{title}</h1>
+      <FormWrapper>
+        <FormSection>
+          {" "}
+          <form onSubmit={handleSubmit}>
+            <TextInput
+              {...rest}
+              value={state[type]}
+              handleOnChange={handleOnChange}
             />
-          </>
-        )}
-      </section>
-    </>
+            <Button label="Convert" onClick={handleSubmit} />
+          </form>
+        </FormSection>
+        <FormSection>
+          {" "}
+          <section>
+            {result[converter] && (
+              <>
+                <p>{result[converter]}</p>
+                <Button
+                  label="Clear"
+                  onClick={() =>
+                    setResult(prevResult => ({
+                      ...prevResult,
+                      [converter]: null
+                    }))
+                  }
+                />
+              </>
+            )}
+          </section>
+        </FormSection>
+      </FormWrapper>
+    </Section>
   );
 }
