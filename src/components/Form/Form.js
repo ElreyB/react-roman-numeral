@@ -27,9 +27,14 @@ const FormSection = styled.section`
     flex-basis: 100%;
   }
 `;
-
-const Result = styled.div`
+const ResultWrapper = styled.div`
   padding-top: 20px;
+`;
+
+const Result = styled.p`
+  padding: 10px 0;
+  font-size: 31px;
+  letter-spacing: 2px;
 `;
 
 export default function Form({ converter, ...props }) {
@@ -75,23 +80,20 @@ export default function Form({ converter, ...props }) {
           </form>
         </FormSection>
         <FormSection>
-          {" "}
-          <Result>
-            {result[converter] && (
-              <>
-                <p>{result[converter]}</p>
-                <Button
-                  label="Clear"
-                  onClick={() =>
-                    setResult(prevResult => ({
-                      ...prevResult,
-                      [converter]: null
-                    }))
-                  }
-                />
-              </>
-            )}
-          </Result>
+          {result[converter] && (
+            <ResultWrapper>
+              <Result>{result[converter]}</Result>
+              <Button
+                label="Clear"
+                onClick={() =>
+                  setResult(prevResult => ({
+                    ...prevResult,
+                    [converter]: null
+                  }))
+                }
+              />
+            </ResultWrapper>
+          )}
         </FormSection>
       </FormWrapper>
     </Section>
