@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components/macro";
 import { string, func, number, oneOfType } from "prop-types";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  /* display: inline-block; */
+`;
 
 const Label = styled.label`
-  width: 100%;
-  display: inline-block;
+  display: block;
   font-size: 20px;
 `;
 
@@ -15,6 +16,7 @@ const StyledInput = styled.input`
   text-align: center;
   font-size: 20px;
   padding: 5px 0;
+  width: 100%;
 `;
 
 export default function TextInput({

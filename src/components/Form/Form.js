@@ -15,11 +15,17 @@ const Section = styled.section`
 const FormWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 
 const FormSection = styled.section`
   flex-basis: 50%;
   padding: 0 12px;
+  @media (max-width: 425px) {
+    flex-basis: 100%;
+  }
 `;
 
 const Result = styled.div`
