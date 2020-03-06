@@ -1,6 +1,5 @@
 const colors = {
-  panel: "#000000",
-  black: "#1b0909",
+  black: "#000000",
   white: "#ffffff"
 };
 

@@ -5,7 +5,7 @@ import panelBackground from "./styles/images/panel_background.png";
 import mainBackground from "./styles/images/roman-background.jpeg";
 
 const Main = styled.main`
-  background-color: ${({ theme }) => theme.colors.panel};
+  background-color: ${({ theme }) => theme.colors.black};
   min-height: 300px;
   /* flex-basis: 475px;
   flex-shrink: 1; */

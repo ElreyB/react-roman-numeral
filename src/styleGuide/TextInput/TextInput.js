@@ -13,7 +13,7 @@ const Label = styled.label`
 `;
 
 const StyledInput = styled.input`
-  border: 2px solid grey;
+  border: 2px solid ${({ theme }) => theme.colors.black};
   text-align: center;
   font-size: 20px;
   padding: 5px 0;
