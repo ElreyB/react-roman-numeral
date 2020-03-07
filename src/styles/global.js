@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   * {
     box-sizing: border-box;
+    font-family: 'Quattrocento', serif;
   }
   body {
     color: ${({ theme }) => theme.colors.white};
