@@ -7,8 +7,6 @@ import mainBackground from "./styles/images/roman-background.jpeg";
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.black};
   min-height: 300px;
-  /* flex-basis: 475px;
-  flex-shrink: 1; */
 `;
 
 const Panel = styled.div`
@@ -34,6 +32,7 @@ const Background = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 0 25px;
 `;
 
 function App() {

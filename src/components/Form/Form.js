@@ -15,7 +15,7 @@ const Section = styled.section`
 const FormWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: 425px) {
+  @media (max-width: 525px) {
     flex-direction: column;
   }
 `;
@@ -23,7 +23,7 @@ const FormWrapper = styled.div`
 const FormSection = styled.section`
   flex-basis: 50%;
   padding: 0 12px;
-  @media (max-width: 425px) {
+  @media (max-width: 525px) {
     flex-basis: 100%;
   }
 `;
@@ -36,6 +36,18 @@ const Result = styled.p`
   font-size: 31px;
   letter-spacing: 2px;
   margin-bottom: 26px;
+  @media (max-width: 525px) {
+    margin-bottom: 10px;
+  }
+`;
+
+const Heading = styled.h1`
+  @media (max-width: 525px) {
+    font-size: 23px;
+  }
+  @media (max-width: 320px) {
+    font-size: 19px;
+  }
 `;
 
 export default function Form({ converter, ...props }) {
@@ -46,13 +58,24 @@ export default function Form({ converter, ...props }) {
 
   const handleOnChange = e => {
     const { name, value } = e.target;
+    console.log(isNaN(value) ? value.toUpperCase() : value);
+    const invalidInput =
+      value === "" ||
+      (isNaN(value) && value.toUpperCase().match(/[^MDCLXVI]/)) ||
+      value > 3999;
 
-    if (value > 3999) {
+    if (invalidInput) {
       setError({ ...error, [name]: "Invalid input" });
-      setState({ ...state, [name]: value });
+      setState({
+        ...state,
+        [name]: isNaN(value) ? value.toUpperCase() : value
+      });
     } else {
       setError({ ...error, [name]: "" });
-      setState({ ...state, [name]: value });
+      setState({
+        ...state,
+        [name]: isNaN(value) ? value.toUpperCase() : value
+      });
     }
   };
 
@@ -75,7 +98,7 @@ export default function Form({ converter, ...props }) {
 
   return (
     <Section>
-      <h1>{title}</h1>
+      <Heading>{title}</Heading>
       <FormWrapper>
         <FormSection>
           <form onSubmit={handleSubmit}>
