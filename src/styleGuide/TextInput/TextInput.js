@@ -22,6 +22,12 @@ const StyledInput = styled.input`
   margin-bottom: 10px;
 `;
 
+const Error = styled.p`
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 17px;
+  letter-spacing: 2px;
+`;
+
 export default function TextInput({
   label,
   id,
@@ -33,7 +39,6 @@ export default function TextInput({
   error,
   ...props
 }) {
-  console.log(props);
   return (
     <Wrapper className={className}>
       <Label htmlFor={id}>{label}</Label>
@@ -46,7 +51,7 @@ export default function TextInput({
         error={error}
         {...props}
       />
-      {error && <p>{error}</p>}
+      {error && <Error>{error}</Error>}
     </Wrapper>
   );
 }
