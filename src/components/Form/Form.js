@@ -35,6 +35,7 @@ const Result = styled.p`
   padding: 10px 0;
   font-size: 31px;
   letter-spacing: 2px;
+  margin-bottom: 26px;
 `;
 
 export default function Form({ converter, ...props }) {
