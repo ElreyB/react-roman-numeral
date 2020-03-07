@@ -42,6 +42,9 @@ const Result = styled.p`
 `;
 
 const Heading = styled.h1`
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+}
   @media (max-width: 525px) {
     font-size: 23px;
   }
