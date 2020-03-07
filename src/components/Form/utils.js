@@ -45,7 +45,6 @@ export function romanNumeralsConverter(arabicNumber) {
 }
 
 export function arabicNumberConverter(romanNumeral) {
-  console.log(romanNumeral);
   return sortedRomanNumerals.reduce((arabicNumber, romanCharacter) => {
     while (romanNumeral.includes(romanCharacter)) {
       arabicNumber += romanNumeralsTable[romanCharacter];

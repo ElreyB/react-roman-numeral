@@ -29,8 +29,10 @@ export default function TextInput({
   name,
   className,
   handleOnChange,
+  error,
   ...props
 }) {
+  console.log(props);
   return (
     <Wrapper className={className}>
       <Label htmlFor={id}>{label}</Label>
@@ -42,6 +44,7 @@ export default function TextInput({
         name={name}
         {...props}
       />
+      {error && <p>{error}</p>}
     </Wrapper>
   );
 }

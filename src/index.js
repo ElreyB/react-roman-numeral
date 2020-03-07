@@ -2,14 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { ThemeProvider } from "styled-components";
-import { theme, GlobalStyles } from "./styles";
+import { AllTheProviders } from "./test-utils";
 
 const RootApp = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyles />
+  <AllTheProviders>
     <App />
-  </ThemeProvider>
+  </AllTheProviders>
 );
 
 ReactDOM.render(<RootApp />, document.getElementById("root"));

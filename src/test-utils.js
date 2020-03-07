@@ -9,7 +9,7 @@ import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyles } from "./styles";
 
-const AllTheProviders = ({ children }) => {
+export const AllTheProviders = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />

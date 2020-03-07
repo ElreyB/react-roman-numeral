@@ -8,7 +8,8 @@ const props = {
   type: "text",
   name: "name",
   id: "name",
-  handleOnChange: jest.fn()
+  handleOnChange: jest.fn(),
+  error: "Invalid input"
 };
 
 describe("TextInput", () => {
@@ -30,10 +31,11 @@ describe("TextInput", () => {
   });
 
   it("renders TextInput with props being passed", () => {
-    const { getByLabelText } = render(<TextInput {...props} />);
+    const { getByLabelText, getByText } = render(<TextInput {...props} />);
     expect(getByLabelText("Test Label").value).toBe("Elrey");
     expect(getByLabelText("Test Label").name).toBe("name");
     expect(getByLabelText("Test Label").type).toBe("text");
+    expect(getByText(props.error)).not.toBeNull();
     fireEvent.change(getByLabelText("Test Label"), {
       target: { value: "Bob" }
     });
