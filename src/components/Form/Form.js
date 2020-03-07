@@ -127,12 +127,17 @@ export default function Form({ converter, ...props }) {
               <Result>{result[converter]}</Result>
               <Button
                 label="Clear"
-                onClick={() =>
+                onClick={() => {
                   setResult({
                     ...result,
-                    [converter]: null
-                  })
-                }
+                    [converter]: !isNaN(state[converter]) ? "" : undefined
+                  });
+
+                  setState({
+                    ...state,
+                    [converter]: !isNaN(state[converter]) ? "" : undefined
+                  });
+                }}
               />
             </ResultWrapper>
           )}
