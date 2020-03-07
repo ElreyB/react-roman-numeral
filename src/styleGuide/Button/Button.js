@@ -9,6 +9,7 @@ const StyledButton = styled.button.attrs(({ type }) => ({ type: type }))`
   background-color: ${({ theme, error }) =>
     error ? theme.colors.error : theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
+  font-size: 16px;
 `;
 
 export default function Button({ label, onClick, type, className, error }) {
