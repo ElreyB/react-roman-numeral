@@ -40,12 +40,19 @@ const Result = styled.p`
 export default function Form({ converter, ...props }) {
   const [result, setResult] = useState({ arabic: undefined, roman: "" });
   const [state, setState] = useState({ arabic: undefined, roman: "" });
+  const [error, setError] = useState("");
   const { title, ...rest } = converterType[converter];
 
   const handleOnChange = e => {
     const { name, value } = e.target;
 
-    setState({ ...state, [name]: value });
+    if (value > 3999) {
+      setError("Invalid input");
+      setState({ ...state, [name]: value });
+    } else {
+      setError("");
+      setState({ ...state, [name]: value });
+    }
   };
 
   const handleSubmit = e => {
@@ -63,7 +70,7 @@ export default function Form({ converter, ...props }) {
     }
   };
 
-  console.log(rest, result, state[converter], result[converter]);
+  console.log(rest, result, state[converter], result[converter], error);
 
   return (
     <Section>
@@ -78,6 +85,7 @@ export default function Form({ converter, ...props }) {
               min={1}
               max={3999}
               step={1}
+              error={error}
             />
             <Button label="Convert" onClick={handleSubmit} />
           </form>

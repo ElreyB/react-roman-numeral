@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { string, func, number, oneOfType } from "prop-types";
 
 const Wrapper = styled.div`
-  /* display: inline-block; */
+  height: 100px;
 `;
 
 const Label = styled.label`
@@ -13,7 +13,8 @@ const Label = styled.label`
 `;
 
 const StyledInput = styled.input`
-  border: 2px solid ${({ theme }) => theme.colors.black};
+  border: 2px solid
+    ${({ theme, error }) => (error ? "red" : theme.colors.black)};
   text-align: center;
   font-size: 20px;
   padding: 5px 0;
@@ -42,6 +43,7 @@ export default function TextInput({
         onChange={handleOnChange}
         value={value}
         name={name}
+        error={error}
         {...props}
       />
       {error && <p>{error}</p>}
