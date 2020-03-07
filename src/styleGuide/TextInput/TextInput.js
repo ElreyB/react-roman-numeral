@@ -14,7 +14,7 @@ const Label = styled.label`
 
 const StyledInput = styled.input`
   border: 2px solid
-    ${({ theme, error }) => (error ? "red" : theme.colors.black)};
+    ${({ theme, error }) => (error ? theme.colors.error : theme.colors.black)};
   text-align: center;
   font-size: 20px;
   padding: 5px 0;

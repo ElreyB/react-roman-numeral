@@ -1,6 +1,7 @@
 const colors = {
   black: "#000000",
-  white: "#ffffff"
+  white: "#ffffff",
+  error: "#ff0033"
 };
 
 export const theme = {

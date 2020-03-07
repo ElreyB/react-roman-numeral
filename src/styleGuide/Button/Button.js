@@ -6,13 +6,20 @@ const StyledButton = styled.button.attrs(({ type }) => ({ type: type }))`
   width: 100%;
   border: 2px solid ${({ theme }) => theme.colors.white};
   padding: 5px 0;
-  background-color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme, error }) =>
+    error ? theme.colors.error : theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
 `;
 
-export default function Button({ label, onClick, type, className }) {
+export default function Button({ label, onClick, type, className, error }) {
   return (
-    <StyledButton onClick={onClick} type={type} className={className}>
+    <StyledButton
+      onClick={onClick}
+      type={type}
+      className={className}
+      error={error}
+      disabled={error ? true : false}
+    >
       {label}
     </StyledButton>
   );
