@@ -61,7 +61,6 @@ export default function Form({ converter, ...props }) {
 
   const handleOnChange = e => {
     const { name, value } = e.target;
-    console.log(isNaN(value) ? value.toUpperCase() : value);
     const invalidInput =
       value === "" ||
       (isNaN(value) && value.toUpperCase().match(/[^MDCLXVI]/)) ||
@@ -84,20 +83,19 @@ export default function Form({ converter, ...props }) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const { roman, arabic } = state;
     if (converter === "roman") {
       setResult({
         ...result,
-        roman: romanNumeralsConverter(state.roman)
+        roman: romanNumeralsConverter(roman)
       });
     } else {
       setResult({
         ...result,
-        arabic: arabicNumberConverter(state.arabic.toUpperCase())
+        arabic: arabicNumberConverter(arabic.toUpperCase())
       });
     }
   };
-
-  console.log(rest, result, state[converter], result[converter], error);
 
   return (
     <Section>
