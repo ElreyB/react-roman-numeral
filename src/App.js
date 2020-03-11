@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Form from "./components/Form";
-import panelBackground from "./styles/images/panel_background.png";
-import mainBackground from "./styles/images/roman-background.jpeg";
+import panelBackground from "./images/panel_background.png";
+import mainBackground from "./images/roman-background.jpeg";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.black};
