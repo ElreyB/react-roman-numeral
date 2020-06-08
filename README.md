@@ -35,18 +35,11 @@ _Application can converter an arabic number to roman numeral and vs versa_
 | 400   | CD     |
 | 900   | CM     |
 
-## Setup/Installation Requirements
-
 ### Development
 
 - _Clone this repository to your machine_
 - _In your terminal type "git clone (repository url)_
-- _To open index.html file_
-  - _Click on the index.html file to open in your browser of choice_
-  - _You can also open with command line_
-    - Windows - `start index.html`
-    - Mac - `open index.html`
-  - _Run `npm run start`_
+- _Run `npm run start`_
 
 ## Known Bugs 🐛🐛🐛
 
@@ -57,3 +50,6 @@ No known bugs
 _Feel free to contact me at elbelmonti@gmail.com_
 
 ## Technologies Used
+
+_Create React App_
+_Styled Components_
